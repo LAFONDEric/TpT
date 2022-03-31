@@ -12,12 +12,14 @@ public class zonz : MonoBehaviour
     public void apparaitre(Case[] tableauDeplacement)
     {
         int lb = 0;
-     
-        while (lb < tableauDeplacement.Length && tableauDeplacement[lb] != null)
+        if (tableauDeplacement != null)
         {
-            tableauDeplacement[lb].GetComponent<MeshRenderer>().material = de;
-            lb++;
+            while (lb < tableauDeplacement.Length && tableauDeplacement[lb] != null)
+            {
+                tableauDeplacement[lb].GetComponent<MeshRenderer>().material = de;
+                lb++;
 
+            }
         }
     }
 

@@ -6,8 +6,10 @@ public class Case : MonoBehaviour
 {
     //Difficulter a marcher sur la case
     public int poids;
-   // [HideInInspector]
+
     public int Niveau;
+    [HideInInspector]
+    public bool valider;
     [HideInInspector]
     public GameObject CaseNord;
     [HideInInspector]

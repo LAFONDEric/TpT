@@ -16,6 +16,7 @@ public class Deplacement : MonoBehaviour
 
         List<Case> LisDeplacement = new List<Case>();
         // vallide le centre
+        if(!GameObject.Find("case" + Coordonerx.ToString() + "  " + Coordonery.ToString())) { Debug.Log("la case existe pas"); return null; }
         LisDeplacement.Add(GameObject.Find("case" + Coordonerx.ToString() + "  " + Coordonery.ToString()).GetComponent<Case>());
         LisDeplacement[0].Niveau = distanceMAx;
 
@@ -80,11 +81,12 @@ public class Deplacement : MonoBehaviour
         int lo = 0;
         foreach (Case caseActive in LisDeplacement)
         {
-            
+            caseActive.Niveau = 0;
             tableauDeplacement[lo] = caseActive;
             lo++;
            
         }
         return tableauDeplacement;
     }
+
 }
